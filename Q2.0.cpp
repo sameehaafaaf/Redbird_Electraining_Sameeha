@@ -14,7 +14,7 @@ int main() {
         else if (speed == 0){
             cout << "Stopped" << endl;
         }
-        else (speed < 0){
+        else {
             cout << "Moving backward" << endl;
         }  
     }
@@ -26,8 +26,6 @@ int main() {
      */
 
     // prompts users to enter speed
-    cout << "Enter speed: ";
-    cin >> speed;
 
     /**
      * HOMEWORK TODO 1: if speed is positive, print "Moving forward"
