@@ -6,14 +6,15 @@ int main() {
     int speed = 0;
     // put your code starting below this line
     while (true){
+        cout << "Enter speed : ";
+        cin >> speed;
         if (speed > 0){
             cout << "Moving forward" << endl;
         }
         else if (speed == 0){
             cout << "Stopped" << endl;
         }
-        else (speed < 0);//why is the file not compiling without the semicolon here
-        {
+        else (speed < 0){
             cout << "Moving backward" << endl;
         }  
     }
