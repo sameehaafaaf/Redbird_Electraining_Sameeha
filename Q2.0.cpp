@@ -14,9 +14,8 @@ int main() {
         else if (speed == 0){
             cout << "Stopped" << endl;
         }
-        else {
+        else 
             cout << "Moving backward" << endl;
-        }  
     }
       /**
      * HOMEWORK TODO 2: repeat the following code indefinitely-- while, ending before return 0;
