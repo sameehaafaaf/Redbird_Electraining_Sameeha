@@ -1,16 +1,23 @@
+// include the necessary libraries
+#include <Arduino.h>
+#include <mcp2515.h>
+
+// create MCP2515 object
+MCP2515 mcp2515(PIN_PD2)
+/* todo 1 */
+
 void setup() {
     // set the pinMode on the input pin
     /* todo 1 */
     pinMode(PIN_PC0, INPUT);
     // set the pinMode on the LED pin
-    pinMode(PIN_PB2, OUTPUT);
+    pinMode(PIN_PD2, OUTPUT);
     /* todo 1 */
     // initialize the CAN controller at 500kbps
     /* todo 1 */
-    MCP2515 canName(PIN_PB2);
-    canName.reset();
-    canName.setBitrate(CAN_500KBPS, MCP_XTAL_FREQ); //CAN_500KBPS format for initialising 500kbps
-    canName.setNormalMode();
+    MCP2515.reset();
+    MCP2515.setBitrate(CAN_500KBPS,  MCP_20MHZ); //CAN_500KBPS format for initialising 500kbps
+    MCP2515.setNormalMode();
 }
 
 void loop() {
@@ -26,7 +33,7 @@ void loop() {
         if (rxFrame.can_id == 0x420 && rxFrame.data[0] == 0x69) {
             // turn on the LED to indicate activity
             /* todo 3 */
-            digitalWrite(PIN_PB2, HIGH);
+            digitalWrite(PIN_PD2, HIGH);
             // read the analog value from the input pin and store it as a variable
             /* todo 3 */
             analogRead(PIN_PC0);
@@ -42,7 +49,7 @@ void loop() {
 
             // turn off the LED after sending
             /* todo 3 */
-            digitalWrite(PIN_PB2, LOW); 
+            digitalWrite(PIN_PD2, LOW); 
         }
     }
 }
